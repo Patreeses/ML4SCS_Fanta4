@@ -15,8 +15,8 @@ The goal of this repository is to document the full project workflow over the se
 
 ---
 
-## Team Members
-- Member 1
+## Team Members Fanta 4
+- 
 - Member 2
 - Member 3
 
