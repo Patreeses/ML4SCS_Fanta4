@@ -1,10 +1,11 @@
-This section is only for the tutors and the professor. If you are a team member please start reading below this paragraph (LINK SETZEN).
+This section is only for the tutors and the professor. If you are a team member please start reading [below this paragraph](#dldr).
 
-Sorry, this file is in German. It contains only the instructions to our group members on how to install git, how to configure it and how to use it. I suggest in this file, that when doing a git pull, we do it with the option `git pull --rebase` to keep a linear git history. Later I suggest to set up git in a way that it automatically does that when execute `git pull`. Also the IDEs should be configured that way. Only if there is a conflict, we should switch back to the normal _git pull_ by first aborting the pull (`git rebase --abort`) and the doing the pull in the classical way (`git pull --no-rebase`, if git is already configured to do a rebase automatically). That is because dealing with rebase conflicts is just too much work to do. a potential merge conflict is easier to deal with. In that case we accept the resulting merge commit and the non-linear git-history. These suggestions are based on the following video: [https://www.youtube.com/watch?v=xN1-2p06Urc](https://www.youtube.com/watch?v=xN1-2p06Urc).
+Sorry, this file is in German. It contains only the instructions to our group members on how to install git, how to configure it and how to use it. I suggest in this file, that when doing a git pull, we do it with the option `git pull --rebase` to keep a linear git history. Later I suggest to set up git in a way that it automatically does that when execute `git pull`. Also the IDEs should be configured that way. Only if there is a conflict, we should switch back to the normal _git pull_ by first aborting the pull (`git rebase --abort`) and the doing the pull in the classical way (`git pull --no-rebase`, if git is already configured to do a rebase automatically). That is because dealing with rebase conflicts is just too much work to do. a potential merge conflict is easier to deal with. In that case we accept the resulting merge commit and the non-linear git-history. These suggestions are based on the following video: [https://www.youtube.com/watch?v=xN1-2p06Urc](https://www.youtube.com/watch?v=xN1-2p06Urc).  
 ------------------------------End of Tutor and Professor section----------------------------------------
 
 # DL;DR
 ## Git installieren
+[Langversion](#git-installieren-1)
 ### Linux
 Debian/Ubuntu: `sudo apt install git`
 andere Distro: Bitte Anweisungen auf dieser Seite befolgen: [https://git-scm.com/install/linux](https://git-scm.com/install/linux) [Langversion](#linux-debian-basiert-z-b-ubuntu)
@@ -14,6 +15,7 @@ MacOS: Bitte Anweisungen auf dieser Seite befolgen: [https://git-scm.com/install
 Windows: Windows + R; dann `cmd` und auf Enter drücken; dann `winget install --id Git.Git -e --source winget` [Langversion](#windows)
 
 ## Einrichtung und Empfohlene Einstellungnen
+[Langversion](#name-und-e-mail)  
 
 ```
 git config --global user.name "Name"
@@ -26,14 +28,16 @@ git config --global user.name "Felix Roß"
 git config --global user.email "felix.ross@stud.leuphana.de"
 ```
 
-Danach im Terminal in den Projktordner / Git Repo navigieren.
-`git clone https://github.com/Patreeses/ML4SCS_Fanta4` (hier dann ggf. GitHub Zugangsdaten eingeben)
-`git config pull.rebase true`
-`git config rebase.autoStash true`
+[Langversion](#git-repo-das-erste-mal-herunterladen)  
+Danach im Terminal in den Projktordner / Git Repo navigieren.  
+`git clone https://github.com/Patreeses/ML4SCS_Fanta4` (hier dann ggf. GitHub Zugangsdaten eingeben)  
+`git config pull.rebase true`  
+`git config rebase.autoStash true`  
 
 Einrichtung abgeschlossen.
 
-## Empfohlener Workflow (mit entsprechender Konfiguration)
+## Empfohlener Workflow (mit entsprechender Konfiguration)  
+[Langversion](#empfohlener-workflow)  
 `git pull`
 Am Projekt arbeiten.
 Falls neue Dateien erstellt wurden: `git add dateiname.py` (oder alternativ `git add --all` kurz vorm Commit)
@@ -42,12 +46,15 @@ Falls neue Dateien erstellt wurden: `git add dateiname.py` (oder alternativ `git
 `git push`
 
 ## Probleme beim Pull
+[Kurzversion](#probleme-beim-pull-1)    
 `git rebase --abort`
 `git pull --no-rebase`
 Eventuelle Merge-Konflikte müssen jetzt gelöst werden. Mehr dazu in [diesem Video](https://www.youtube.com/watch?v=DloR0BOGNU0).
-Alternativ erstmal nach `git rebase --abort` weiterarbeiten, ohne erneutes `git pull`. Das Problem sollte aber schnellstmöglich behoben werden.
+Alternativ erstmal nach `git rebase --abort` weiterarbeiten, ohne erneutes `git pull`. Das Problem sollte aber schnellstmöglich behoben werden.  
+-----------------------------Ende TL;DR----------------------------------------
 
-# Git installieren
+# Git installieren  
+[Kurzversion](#git-installieren)  
 Fall ihr git auf eurem PC noch nicht installiert habt, wäre es empfehlenswert, das zu tun. Auf diesem Weg seid ihr in der Lage, die Änderungen von GitHub direkt auf euren PC zu laden, dort normal zu arbeiten und am Ende euerer Arbeit eure Änderungen wieder auf GitHub hochzuladen. Suche dir das für dich richtige System und ggf. die richtige Installationsmethode raus.
 
 ## Linux (Debian basiert, z. B. Ubuntu)
@@ -81,6 +88,7 @@ Falls du im ersten Schritt schon keine Eingabeaufforderung öffnen kannst, kanns
 - Lade dir dort den passenden Installer runter und führe ihn aus (ich würde die Standalone Installer empfehlen).
 
 # Empfohlende Einstellungen in Git
+[Kurzversion](#einrichtung-und-empfohlene-einstellungnen)  
 ## Name und E-Mail
 Es wird empfohlen, seinen Namen und seine E-Mail Adresse in git zu hinterlegen. Hierbei geht es erstmal noch nicht um den Login in GitHub, sondern darum, dass bei Commits mit gespeichert wird, von wem diese Commits sind. Ich denke, dass das gerade für ein Projekt wie dieses wichtig ist.
 
@@ -97,7 +105,7 @@ git config --global user.name "Felix Roß"
 git config --global user.email "felix.ross@stud.leuphana.de"
 ```
 
-## Git Repo das erste Mal herunterlade
+## Git Repo das erste Mal herunterladen 
 Es macht jetzt Sinn, sich das Git-Repository (kurz "Repo") das erste Mal herunterzuladen. Navigiere dazu in dem schon geöffneten Terminal in das Verzeichnis, in dem du später arbeiten möchtest. Unter Windows und Linux wird dafür der Befehl `cd verzeichnisname` benutzt (unter Linux ist der Verzeichnisname case sensitive, das heißt, dass Groß- und Kleinschreibung zählen), um in den nächsten Ordner zu kommen.
 
 Tipp (musst du dir nicht durchlesen, du kannst diesen Absatz überspringen):
@@ -124,15 +132,17 @@ Optional kannst du noch Autostash einstellen. Das bewirkt, dass nicht committete
 Danach benutzt der Befehl `git pull` rebase als Methode und nicht mehr Merge, für den Fall mehrerer paralleler Arbeiten. Um ausnahmsweise wieder Merge zu nutzen, nutze den Befehl `git pull --no-rebase`. Für den Fall eines Conflicts beim Pull, führe `rebase --abort` aus, um aus dem Vorgang rauszukommen (und den Pull abzubrechen). Weiteres zur Anwendung aber im nächsten Kapitel.
 
 # Empfohlener Workflow
-Es wird hier erstmal vorausgesetzt, dass das Repo oder sogar die globale Konfiguration mit `git config pull.rebase true` konfiguriert wurde (siehe dazu Kapitel [Pull-Methode](#pull-methode)). Wie mit dem Fall umzugehen ist, dass das nicht passiert, kommt später (LINK SETZEN)
+[Kurzversion](#empfohlener-workflow-mit-entsprechender-konfiguration)  
+Es wird hier erstmal vorausgesetzt, dass das Repo oder sogar die globale Konfiguration mit `git config pull.rebase true` konfiguriert wurde (siehe dazu Kapitel [Pull-Methode](#pull-methode)). Wie mit dem Fall umzugehen ist, dass das nicht passiert, [kommt später](#alternativer-workflow-ohne-voreingestellten-rebase)
 
 Ich würde empfehlen, immer, bevor man anfängt am Projekt zu arbeiten, sich einmal den aktuellen Stand runterzuladen. Das geht mit dem Befehl `git pull`.
 
 Danach kannst du am Projekt arbeiten und beliebig oft committen. Das geht mit dem Befehl `git commit -am "kurze Beschreibung über die Änderungen, die in diesem Commit gemacht wurden"`. Zwischen den Anführungszeichen ist eine kurze Beschreibung, damit man sich später in der Git Historie besser zurecht findet. Solltest du hier nichts schreiben wollen (nicht empfohlen), Bitte einfach zwei Anführungszeichen ohne Inhalt setzen. Nach dem Beenden der Arbeit und kurz vor dem Push muss ein Commit erfolgen. Sollten Dateien in das Projekt hinzugefügt worden sein, füge diese bitte irgendwann vor dem Commit (hier ist es nach Dateierstellung egal wann) mit `git add dateiname.py` zur Überwachung (Staging) hinzu. der -a flag im Commit Command sorgt dafür, dass git alle gestageten Dateien (ich habe das "Überwacht" genannt) vor dem Commit selbst aktualisiert. Commits können zwischen zwischendurch technisch gesehen so oft gemacht werden, wie gewünscht.
 
-Vor dem Push bitte nochmal mit `git pull` den aktuellen Stand herunterladen. Das verhindert den Fehler, dass sich in der Zwischenzeit das Online Repository geändert hat und man deswegen nicht Pushen kann. Sollte es bei diesem Pull zu Problemen kommen, Lies bitte im Kapitel Git Pull Probleme (LINK SETZEN). Anschließend wird mit `git push` alles auf GitHub hochgeladen. Bevor du das mit `git pull` und `git push` machst, musst du alle Änderungen in gestagten Dateien committed haben (sofern kein autostash eingeschaltet war). 
+Vor dem Push bitte nochmal mit `git pull` den aktuellen Stand herunterladen. Das verhindert den Fehler, dass sich in der Zwischenzeit das Online Repository geändert hat und man deswegen nicht Pushen kann. Sollte es bei diesem Pull zu Problemen kommen, Lies bitte im Kapitel [Git Pull Probleme](#probleme-beim-pull-1). Anschließend wird mit `git push` alles auf GitHub hochgeladen. Bevor du das mit `git pull` und `git push` machst, musst du alle Änderungen in gestagten Dateien committed haben (sofern kein autostash eingeschaltet war). 
 
 ## Probleme beim Pull
+[Kurzversion](#probleme-beim-pull)  
 Sollte es jetzt bei `git pull` zu problemen kommen, spricht man von einem Rebase-Conflict. Da diese ziemlich ekelig zu lösen sind, würde ich hier empfehlen, temporär doch wieder auf den Merge-Modus zu wechseln, wie das geht wird hier beschrieben.
 
 zunächst muss nun der Vorgang abgebrochen werden: `git rebase --abort`. Anschließend wird dann ein Pull im Merge-Modus durchgeführt: `git pull --no-rebase`. Es kann jetzt immernoch zu einem Merge-Conflict kommen. Was dann zu tun ist, ist gut in [diesem YouTube Video](https://www.youtube.com/watch?v=DloR0BOGNU0) (leider auf englisch, aber relativ gut verständlich)beschrieben. 
@@ -143,11 +153,11 @@ Es ist zwar richtig, dass ein Merge statt einem Rebase eine nicht mehr ganz so l
 Fall du nicht einstellen möchtest, dass automatisch rebase statt merge beim Pull gemacht wird, führe bitte folgende Befehle statt der oben angegebenen aus:
 
 Vor dem Arbeiten:
-`git pull --rebase`
-(am Projekt arbeiten)
-ggf. `git add dateiname.py` bei neuen Dateien
-`git commit -am "Schreibe hier, was du geändert hast"`. Mehrfach durchführbar
-`git pull --rebase`. Zwischen pull und commit dürfen keine Änderungen mehr an überwachten Dateien stattgefunden haben (ausnahme: autostash).
+`git pull --rebase`  
+(am Projekt arbeiten)  
+ggf. `git add dateiname.py` bei neuen Dateien  
+`git commit -am "Schreibe hier, was du geändert hast"`. Mehrfach durchführbar.  
+`git pull --rebase`. Zwischen pull und commit dürfen keine Änderungen mehr an überwachten Dateien stattgefunden haben (ausnahme: autostash).  
 `git push`.
 
 
